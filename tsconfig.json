@@ -11,6 +11,9 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"],
+			"@models/*": ["src/components/models/*"],
+			"@view/*": ["src/components/view/*"],
+			"@presenters/*": ["src/components/presenters/*"]
 		}
 	},
 	"include": ["src"],

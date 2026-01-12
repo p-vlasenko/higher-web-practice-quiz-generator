@@ -8,6 +8,9 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'@': src,
+			'@models': resolve(src, 'components/models'),
+			'@view': resolve(src, 'components/view'),
+			'@presenters': resolve(src, 'components/presenters'),
 		}
 	},
 	server: {
