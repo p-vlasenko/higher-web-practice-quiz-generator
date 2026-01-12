@@ -11,7 +11,7 @@ export type Handler<T extends object, K extends keyof T = keyof T>
     = (payload: T[K]) => void;
 
 export type MessageBus<T extends object> = {
-    on<K extends EventName<T>>(eventName: K, handler: Handler<T, K>): void;
+    on<K extends EventName<T>>(eventName: K | K[], handler: Handler<T, K>): void;
     emit<K extends EventName<T>>(eventName: K, data: T[K]): void;
     onAll(handler: Handler<T, keyof T>): void;
 };
@@ -45,5 +45,4 @@ export type QuizStorage = {
     add(quiz: QuizData): Promise<AddQuizResult>;
     get(id: string): Promise<GetQuizResult>;
     getList(): Promise<LoadQuizzesResult>;
-    remove(id: string): Promise<void>;
 };
