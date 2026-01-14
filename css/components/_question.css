@@ -1,0 +1,13 @@
+.question__text {
+	margin-bottom: var(--space-4);
+}
+
+.question__hint {
+	margin-bottom: var(--space-24);
+}
+
+.question__options {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-8);
+}

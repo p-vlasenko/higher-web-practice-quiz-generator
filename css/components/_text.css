@@ -1,0 +1,11 @@
+.text--caption {
+	font-size: var(--font-caption-size);
+	line-height: var(--font-caption-line);
+	color: var(--color-text-secondary);
+}
+
+.text--body-accent {
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: 500;
+}

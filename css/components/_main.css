@@ -1,0 +1,30 @@
+.main {
+	position: fixed;
+	top: var(--header-height);
+	bottom: var(--footer-height);
+	left: 0;
+	right: 0;
+	overflow: auto;
+}
+
+.main__content {
+	display: flex;
+	justify-content: center;
+	/* padding: var(--space-64) 0; */
+}
+
+@media (max-width: 1024px) {
+	.main {
+		bottom: 0;
+	}
+
+	.main__content {
+		padding: var(--space-48) 0;
+	}
+}
+
+@media (max-width: 428px) {
+	.main__content {
+		padding: var(--space-24) 0;
+	}
+}

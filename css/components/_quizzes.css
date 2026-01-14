@@ -1,0 +1,71 @@
+.quizzes {
+	margin-top: 48px;
+	width: 1140px;
+	display: flex;
+	flex-direction: row;
+	gap: 24px;
+	flex-wrap: wrap;
+}
+
+/* Container for quiz cards: keep fixed-size cards from overlapping */
+.quizzes__cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--grid-gutter);
+	align-items: flex-start;
+	/* justify-content: flex-start; */
+}
+
+.quizzes__title {
+	margin-bottom: var(--space-24);
+}
+
+.quizzes__empty {
+	height: 100%;
+}
+
+.quizzes__empty-content {
+	grid-column: 3 / span 8;
+	align-self: center;
+}
+
+.quizzes__empty-title {
+	margin-bottom: var(--space-8);
+}
+
+.quizzes__empty-subtitle {
+	color: var(--color-text-secondary);
+	margin-bottom: var(--space-24);
+}
+
+@media (max-width: 1200px) {
+	.quizzes {
+		width: 750px;
+		gap: 20px;
+	}
+
+	.quizzes__empty-content {
+		grid-column: span 8;
+	}
+}
+
+@media (max-width: 414px) {
+	.quizzes {
+		justify-content: center;
+		width: 750px;
+		gap: 20px;
+	}
+
+	.quizzes__cards {
+		width: 344px;
+		align-items: center;
+	}
+
+	.quizzes__empty-content {
+		grid-column: span 4;
+	}
+
+	.quizzes__empty-content .button {
+		width: 100%;
+	}
+}

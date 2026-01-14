@@ -1,0 +1,9 @@
+a {
+	text-decoration: none;
+	color: var(--color-primary);
+	font-weight: var(--font-body-accent-weight);
+}
+
+a:hover {
+	color: var(--color-primary-light-1);
+}
