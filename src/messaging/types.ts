@@ -1,7 +1,7 @@
-import type { MessageBus } from '@/types';
 import type { EventsMap } from './events';
 import type { CommandsMap } from './commands';
 import type { ErrorMessageMap } from './error-messages';
+import type { MessageBus } from '@/types/base';
 
 export type EventChannel = MessageBus<EventsMap>;
 export type CommandChannel = MessageBus<CommandsMap>;
