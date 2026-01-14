@@ -14,14 +14,14 @@ export type QuizGeneratorPresenterDeps = & Channels
 export class QuizGeneratorPresenter {
     #generatorView: QuizGeneratorView;
     #eventChannel: EventChannel;
-    #commandChannel: CommandChannel;
     #errorChannel: ErrorChannel;
+    #commandChannel: CommandChannel;
 
     constructor({
         generatorView,
         eventChannel,
-        errorChannel,
         commandChannel,
+        errorChannel,
     }: QuizGeneratorPresenterDeps) {
         this.#generatorView = generatorView;
         this.#eventChannel = eventChannel;
@@ -35,14 +35,9 @@ export class QuizGeneratorPresenter {
             payload => this.#commandChannel.emit('add_quiz', payload),
         );
 
-        this.#errorChannel.on(
-            ['quiz_adding_error', 'quiz_validation_error'],
-            () => this.#generatorView.toInvalid(),
-        );
-
-        this.#errorChannel.on(
-            'quiz_validation_error',
-            () => this.#generatorView.toInvalid(),
+        this.#generatorView.on(
+            'validation_error',
+            payload => this.#errorChannel.emit('quiz_validation_error', payload),
         );
 
         this.#eventChannel.on('quiz_added', async () => {
