@@ -12,31 +12,3 @@
 	background-color: var(--color-surface);
 	box-shadow: var(--shadow-3);
 }
-
-.modal__title {
-	margin-bottom: var(--space-8);
-}
-
-.modal__subtitle {
-	margin-bottom: var(--space-8);
-}
-
-.modal__message {
-	margin-bottom: var(--space-24);
-}
-
-.modal__actions {
-	display: flex;
-	gap: var(--space-8);
-	flex-wrap: wrap;
-}
-
-@media (max-width: 428px) {
-	.modal__actions {
-		flex-direction: column;
-	}
-
-	.modal__actions .button {
-		flex: 1;
-	}
-}

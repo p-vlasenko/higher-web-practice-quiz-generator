@@ -1,0 +1,27 @@
+.quiz-result__title {
+	margin-bottom: var(--space-8);
+}
+
+.quiz-result__details {
+	margin-bottom: var(--space-8);
+}
+
+.quiz-result__summary {
+	margin-bottom: var(--space-24);
+}
+
+.quiz-result__actions {
+	display: flex;
+	gap: var(--space-8);
+	flex-wrap: wrap;
+}
+
+@media (max-width: 428px) {
+	.quiz-result__actions {
+		flex-direction: column;
+	}
+
+	.quiz-result__actions .button {
+		flex: 1;
+	}
+}
