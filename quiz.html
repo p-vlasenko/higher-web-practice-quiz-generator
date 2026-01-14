@@ -9,19 +9,23 @@
 	</head>
 	<body>
 		<div class="content">
-			<header class="header">
+			<header class="header container">
 				<div class="header__content container">
-					<div class="header__brand">
-						<a href="./index.html">
-							<img class="header__logo" src="./assets/logo.svg" alt="Логотип" />
-						</a>
-					</div>
+					<a href="./index.html">
+						<img class="header__logo" src="./assets/logo.svg" alt="Логотип" />
+					</a>
 					<nav class="header__nav">
 						<a class="button button--secondary" href="./quizzes.html">Посмотреть сохранённые квизы</a>
 					</nav>
 					<button class="header__menu-button" type="button">
 						<img class="header__menu-icon" src="./assets/burger.svg" alt="Меню" />
 					</button>
+					<div class="burger__menu">
+						<div class="dropdown-list">
+							<span class="dropdown-text">Добавить квиз</span>
+							<span class="dropdown-text">Сохранённые квизы</span>
+						</div>
+					</div>
 				</div>
 			</header>
 
@@ -46,18 +50,18 @@
 							</form>
 						</div>
 					</section>
+					<section class="quiz-result hidden">
+						<h2 class="quiz-result__title">Тест завершен</h2>
+						<p class="quiz-result__details">Вы ответили правильно на все вопросы</p>
+						<p class="quiz-result__summary text text--caption">Ваши знания на высоте</p>
+						<div class="quiz-result__actions">
+							<a class="button button--primary" href="./quizzes.html">К списку квизов</a>
+							<button type="button" class="quiz-result__restart-button button button--secondary">Пройти снова</button>
+						</div>
+					</section>
 				</div>
 			</main>
 
-			<div class="quiz-result hidden">
-				<h2 class="quiz-result__title">Тест завершен</h2>
-				<p class="quiz-result__details">Вы ответили правильно на все вопросы</p>
-				<p class="quiz-result__summary text text--caption">Ваши знания на высоте</p>
-				<div class="quiz-result__actions">
-					<a class="button button--primary" href="./quizzes.html">К списку квизов</a>
-					<button type="button" class="quiz-result__restart-button button button--secondary">Пройти снова</button>
-				</div>
-			</div>
 
 			<footer class="footer">
 				<div class="footer__content container">Учебный проект 2025</div>
