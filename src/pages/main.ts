@@ -7,6 +7,7 @@ import { initDb } from '@/utils/storage';
 import { makeChannels } from '@/messaging/channels.factory';
 import { ErrorLogger } from '@/components/error-logger';
 import { ErrorBrowserView } from '@/components/view/error.view';
+import { BurgerBrowserView } from '@/components/view/burger.view';
 
 const db = await initDb();
 const channels = makeChannels();
@@ -25,6 +26,11 @@ const errorPresenter = new ErrorPresenter({
 
 const errorLogger = new ErrorLogger(channels);
 
+const burgerView = new BurgerBrowserView({
+    menu: getFirstElementOrFail('.burger__menu'),
+});
+
+burgerView.init();
 errorLogger.init();
 quizzesModel.init();
 quizGeneratorPresenter.init();
