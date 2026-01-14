@@ -1,4 +1,4 @@
-import type { Handler } from '@/types';
+import type { Handler } from '@/types/base';
 import { asArray } from './utils';
 
 type MakeEmitter = <MessageMap extends object>() => EventEmitter<MessageMap>;

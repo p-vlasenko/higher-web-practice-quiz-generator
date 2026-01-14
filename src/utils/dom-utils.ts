@@ -11,22 +11,37 @@ export const getFirstElementOrFail = (
     return element as HTMLElement;
 };
 
-export function getTemplateFirstChild<T extends HTMLElement = HTMLElement>(templateId: string): T {
+export const getTemplateFirstChild = <T extends HTMLElement = HTMLElement>(templateId: string): T => {
     const template = getTemplate(templateId);
 
     return (template.content.firstElementChild as T);
-}
+};
 
-export function getTemplate(templateId: string): HTMLTemplateElement {
+export const getTemplate = (templateId: string): HTMLTemplateElement => {
     const template = document.getElementById(templateId);
     assert(!isNil(template), `Template not found. templateId: ${templateId}`);
     assert(template instanceof HTMLTemplateElement, `Element is not a template. templateId: ${templateId}`);
 
     return template as HTMLTemplateElement;
-}
+};
 
-export function cloneTemplate<T extends HTMLElement = HTMLElement>(templateId: string): T {
+export const setChildren = (container: HTMLElement, children: HTMLElement[]) => {
+    container.innerHTML = '';
+    const fragment = document.createDocumentFragment();
+    children.forEach(child => fragment.appendChild(child));
+    container.appendChild(fragment);
+};
+
+export const show = (element: HTMLElement): void => {
+    element.classList.remove('hidden');
+};
+
+export const hide = (element: HTMLElement): void => {
+    element.classList.add('hidden');
+};
+
+export const cloneTemplate = <T extends HTMLElement = HTMLElement>(templateId: string): T => {
     const firstChild = getTemplateFirstChild(templateId);
 
     return firstChild.cloneNode(true) as T;
-}
+};
