@@ -1,12 +1,13 @@
 import { type DBSchema, type IDBPDatabase, openDB } from 'idb';
 import { v7 as uuidV7 } from 'uuid';
-import type { AddQuizResult, GetQuizResult, LoadQuizzesResult, Quiz, QuizData, QuizStorage } from '../types';
 import { isNil } from './utils';
 import { Either } from './fp/tuple-based-either';
 import { makeNotFoundResult } from '@/errors/quiz-not-found';
 import { makeQuizGettingErrorResult } from '@/errors/quiz-getting-error';
 import { makeQuizAddingErrorResult } from '@/errors/quiz-adding.error';
 import { makeQuizzesLoadingErrorResult } from '@/errors/quizzes-loading.error';
+import type { Quiz, QuizData } from '@/types/quiz';
+import type { AddQuizResult, GetQuizResult, LoadQuizzesResult, QuizStorage } from '@/types/base';
 
 const DB_NAME = 'quiz-generator';
 const SCHEMA_NAME = 'quizzes';
