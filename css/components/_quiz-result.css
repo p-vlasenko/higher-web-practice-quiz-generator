@@ -1,3 +1,7 @@
+.quiz-result {
+	margin-top: calc((100vh - var(--header-height) - 344px) / 2);
+}
+
 .quiz-result__title {
 	margin-bottom: var(--space-8);
 }
