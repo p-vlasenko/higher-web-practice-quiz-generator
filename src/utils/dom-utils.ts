@@ -1,5 +1,8 @@
 import { assert, isNil } from './utils';
 
+export const addModifier = (className: string, modifier: string): string =>
+    `${className}_${modifier}`;
+
 export const getFirstElementOrFail = (
     selector: string,
     containerElement: ParentNode = document,

@@ -1,6 +1,9 @@
 import type { AnsweredOptionViewData, OptionViewData } from '@/types/view';
-import { getFirstElementOrFail, show, hide } from '@/utils/dom-utils';
+import { getFirstElementOrFail, show, hide, addModifier } from '@/utils/dom-utils';
 import { isNil } from '@/utils/utils';
+
+const OK_MODIFIER = 'ok';
+const ERR_MODIFIER = 'err';
 
 export class OptionBrowserView {
     readonly element: HTMLElement;
@@ -9,12 +12,15 @@ export class OptionBrowserView {
     #text: HTMLElement;
     #message: HTMLElement;
 
+    #mainInputClass: 'checkbox' | 'radio';
+
     constructor(element: HTMLElement) {
         this.element = element;
         this.#input = getFirstElementOrFail('.option__input', element) as HTMLInputElement;
         this.#label = getFirstElementOrFail('.option__label', element) as HTMLLabelElement;
         this.#text = getFirstElementOrFail('.option__text', element);
         this.#message = getFirstElementOrFail('.option__message', element);
+        this.#mainInputClass = this.#input.classList.contains('checkbox') ? 'checkbox' : 'radio';
     }
 
     renderOptions(data: OptionViewData): void {
@@ -26,7 +32,7 @@ export class OptionBrowserView {
 
         this.#text.textContent = option.text;
 
-        this.setEmptyResult();
+        this.#setEmptyResult();
     }
 
     renderAnsweredOptions(data: AnsweredOptionViewData): void {
@@ -38,33 +44,36 @@ export class OptionBrowserView {
         this.#text.textContent = option.text;
 
         if (isNil(result)) {
-            this.setEmptyResult();
+            this.#setEmptyResult();
         }
         else {
-            this.setResult(result);
+            this.#setResult(result);
         }
     }
 
-    private setEmptyResult(): void {
+    #setEmptyResult(): void {
         this.#message.textContent = '';
         hide(this.#message);
     }
 
-    private setResult(result: Required<AnsweredOptionViewData>['result']): void {
-        this.#label.classList.remove('option__label--success', 'option__label--error');
-        this.#input.classList.remove('checkbox--success', 'checkbox--error', 'radio--success', 'radio--error');
-
+    #setResult(result: Required<AnsweredOptionViewData>['result']): void {
+        this.#resetInputModifiers();
         show(this.#message);
         this.#message.textContent = result.message;
 
-        const modifier = result.ok ? 'success' : 'error';
-        this.#label.classList.add(`option__label--${modifier}`);
+        const modifier = result.ok ? OK_MODIFIER : ERR_MODIFIER;
+        this.#label.classList.add(addModifier('option__label', modifier));
+        this.#input.classList.add(addModifier(this.#mainInputClass, modifier));
+    }
 
-        if (this.#input.classList.contains('checkbox')) {
-            this.#input.classList.add(`checkbox--${modifier}`);
-        }
-        else if (this.#input.classList.contains('radio')) {
-            this.#input.classList.add(`radio--${modifier}`);
-        }
+    #resetInputModifiers(): void {
+        this.#label.classList.remove(
+            addModifier('option__label', OK_MODIFIER),
+            addModifier('option__label', ERR_MODIFIER),
+        );
+        this.#input.classList.remove(
+            addModifier(this.#mainInputClass, OK_MODIFIER),
+            addModifier(this.#mainInputClass, ERR_MODIFIER),
+        );
     }
 }
