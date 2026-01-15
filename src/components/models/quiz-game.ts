@@ -71,9 +71,7 @@ export class QuizGameModel {
             return;
         };
 
-        const hasNext = this.#questionIndex < this.#quiz.questions.length - 1;
-
-        if (!hasNext) {
+        if (this.#isLastQuestion()) {
             this.#finish();
         }
         else {
@@ -134,6 +132,10 @@ export class QuizGameModel {
         const details = new Map(resultOptions.map(option => [option.id, getDetails(option)]));
 
         return { ok, details };
+    }
+
+    #isLastQuestion(): boolean {
+        return this.#questionIndex >= this.#quiz.questions.length - 1;
     }
 }
 
