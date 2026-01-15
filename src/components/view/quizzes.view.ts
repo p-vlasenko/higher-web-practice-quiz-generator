@@ -1,6 +1,6 @@
 import { getFirstElementOrFail, getTemplateFirstChild } from '@/utils/dom-utils';
 import { Observable } from '@/utils/observable';
-import type { QuizCardView, QuizCardViewEvents } from '../presenters/view.types';
+import type { QuizCardView, QuizCardViewEvents } from './view.types';
 import type { Renderer } from '@/types/base';
 
 export class QuizzesBrowserView

@@ -1,5 +1,5 @@
 import type { Channels, ErrorChannel, EventChannel } from '@/messaging/types';
-import type { QuizCardFactory, QuizzesView } from './view.types';
+import type { QuizCardFactory, QuizzesView } from '../view/view.types';
 
 type Deps = Pick<Channels, 'eventChannel' | 'errorChannel'> & {
     quizzesView: QuizzesView;

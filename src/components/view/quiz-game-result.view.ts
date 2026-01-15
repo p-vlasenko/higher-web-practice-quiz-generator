@@ -1,7 +1,7 @@
 import type { ResultInfo } from '../presenters/types';
 import { getFirstElementOrFail, show, hide } from '@/utils/dom-utils';
 import { Observable } from '@/utils/observable';
-import type { QuizGameResultView, QuizGameResultViewEvents } from '../presenters/view.types';
+import type { QuizGameResultView, QuizGameResultViewEvents } from './view.types';
 
 type Deps = {
     element: HTMLElement;

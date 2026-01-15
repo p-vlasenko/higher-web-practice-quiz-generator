@@ -1,5 +1,5 @@
 import type { CommandChannelDeps } from '@/messaging/types';
-import type { QuestionView, QuestionViewEvents, RenderWithAnswerParams } from '../presenters/view.types';
+import type { QuestionView, QuestionViewEvents, RenderWithAnswerParams } from './view.types';
 import type { QuestionData } from '@/types/view';
 import { Observable } from '@/utils/observable';
 import { getFirstElementOrFail, show, hide } from '@/utils/dom-utils';

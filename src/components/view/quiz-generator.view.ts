@@ -1,5 +1,5 @@
 import { Observable } from '@/utils/observable';
-import type { QuizGeneratorView, QuizGeneratorViewEvents } from '../presenters/view.types';
+import type { QuizGeneratorView, QuizGeneratorViewEvents } from './view.types';
 import { getFirstElementOrFail } from '@/utils/dom-utils';
 import { makeValidator, parseJsonObject } from '@/utils/validation';
 import { quizSchema } from '@/schemas/quiz';

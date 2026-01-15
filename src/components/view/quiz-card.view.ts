@@ -1,7 +1,7 @@
 import type { Quiz, QuizId } from '@/types/quiz';
 import { getFirstElementOrFail } from '@/utils/dom-utils';
 import { Observable } from '@/utils/observable';
-import type { QuizCardView, QuizCardViewEvents } from '../presenters/view.types';
+import type { QuizCardView, QuizCardViewEvents } from './view.types';
 
 type Deps = {
     element: HTMLElement;

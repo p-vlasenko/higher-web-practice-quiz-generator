@@ -1,6 +1,6 @@
 import type { QuizAddingParams, SelectedOptions } from '@/messaging/commands';
 import type { Observable } from '@/utils/observable';
-import type { ResultInfo } from './types';
+import type { ResultInfo } from '../presenters/types';
 import type { JsonParsingError } from '@/errors/json-parsing.error';
 import type { ValidationError } from '@/errors/validation.error';
 import type { Quiz, QuizId } from '@/types/quiz';

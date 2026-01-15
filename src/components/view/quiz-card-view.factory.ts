@@ -1,5 +1,5 @@
 import type { Quiz } from '@/types/quiz';
-import type { QuizCardView } from '../presenters/view.types';
+import type { QuizCardView } from './view.types';
 import { QuizCardBrowserView } from './quiz-card.view';
 
 type Deps = {

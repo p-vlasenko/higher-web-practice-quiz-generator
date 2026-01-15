@@ -1,4 +1,4 @@
-import type { QuizGeneratorView } from './view.types';
+import type { QuizGeneratorView } from '../view/view.types';
 import type {
     Channels,
     CommandChannel,

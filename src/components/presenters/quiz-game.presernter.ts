@@ -1,6 +1,6 @@
 import type { Channels } from '@/messaging/types';
 
-import type { QuestionView, QuizGameResultView } from './view.types';
+import type { QuestionView, QuizGameResultView } from '../view/view.types';
 import type { QuizSectionBrowserView } from '@view/quiz-section.view';
 import type { QuizProgressBrowserView } from '@view/quiz-progress.view';
 import type { QuizHeaderBrowserView } from '@view/quiz-header.veiw';
