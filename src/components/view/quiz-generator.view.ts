@@ -50,10 +50,10 @@ export class QuizGeneratorBrowserView
     }
 
     #toValid(): void {
-        this.#textarea.classList.remove('textarea--invalid');
+        this.#textarea.classList.remove('textarea_invalid');
     }
 
     #toInvalid(): void {
-        this.#textarea.classList.add('textarea--invalid');
+        this.#textarea.classList.add('textarea_invalid');
     }
 }

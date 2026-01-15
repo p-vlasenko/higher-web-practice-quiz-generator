@@ -35,30 +35,30 @@
 	background-color: var(--color-border);
 }
 
-.radio--success {
+.radio_ok {
 	border-color: var(--color-success) !important;
 	background-color: var(--color-surface) !important;
 }
 
-.radio--success:checked::before {
+.radio_ok:checked::before {
 	background-color: var(--color-success);
 	mask-image: var(--icon-checked);
 	-webkit-mask-image: var(--icon-checked);
 }
 
-.radio--error {
+.radio_err {
 	border-color: var(--color-error) !important;
 	background-color: var(--color-surface) !important;
 }
 
-.radio--error:checked::before {
+.radio_err:checked::before {
 	background-color: var(--color-error);
 	mask-image: var(--icon-close);
 	-webkit-mask-image: var(--icon-close);
 }
 
-.radio--success:checked::before,
-.radio--error:checked::before {
+.radio_ok:checked::before,
+.radio_err:checked::before {
 	mask-size: contain;
 	mask-repeat: no-repeat;
 	mask-position: center;

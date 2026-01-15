@@ -12,22 +12,22 @@
 	cursor: pointer;
 }
 
-.button--primary {
+.button_primary {
 	background-color: var(--color-primary);
 	color: var(--color-surface);
 }
 
-.button--primary:hover {
+.button_primary:hover {
 	background-color: var(--color-primary-light-1);
 }
 
-.button--secondary {
+.button_secondary {
 	background-color: var(--color-surface);
 	border-color: var(--color-primary);
 	color: var(--color-primary);
 }
 
-.button--secondary:hover {
+.button_secondary:hover {
 	background-color: var(--color-primary-light-2);
 }
 

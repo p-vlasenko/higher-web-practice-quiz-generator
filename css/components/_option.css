@@ -27,12 +27,12 @@
 	pointer-events: none;
 }
 
-.option__label--success {
+.option__label_ok {
 	color: var(--color-success) !important;
 	border-color: var(--color-success) !important;
 }
 
-.option__label--error {
+.option__label_err {
 	color: var(--color-error) !important;
 	border-color: var(--color-error) !important;
 }

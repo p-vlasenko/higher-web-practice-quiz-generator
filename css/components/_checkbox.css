@@ -42,27 +42,27 @@
 	background-color: var(--color-border);
 }
 
-.checkbox--success {
+.checkbox_ok {
 	border-color: var(--color-success) !important;
 	background-color: var(--color-surface) !important;
 }
 
-.checkbox--success:checked {
+.checkbox_ok:checked {
 	border-color: var(--color-success) !important;
 	background-color: var(--color-success) !important;
 }
 
-.checkbox--error {
+.checkbox_err {
 	border-color: var(--color-error) !important;
 	background-color: var(--color-error) !important;
 }
 
-.checkbox--error:checked {
+.checkbox_err:checked {
 	border-color: var(--color-error) !important;
 	background-color: var(--color-error) !important;
 }
 
-.checkbox--error:checked::before {
+.checkbox_err:checked::before {
 	mask-image: var(--icon-close);
 	-webkit-mask-image: var(--icon-close);
 }

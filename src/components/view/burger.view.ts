@@ -56,9 +56,9 @@ export class BurgerBrowserView {
     };
 
     #updateView(): void {
-        this.#menu.classList.toggle('active', this.#isOpen);
-        document.documentElement.classList.toggle('menu-open', this.#isOpen);
-        document.body.classList.toggle('menu-open', this.#isOpen);
+        this.#menu.classList.toggle('burger__menu_active', this.#isOpen);
+        document.documentElement.classList.toggle('menu__overflow', this.#isOpen);
+        document.body.classList.toggle('menu__overflow', this.#isOpen);
 
         this.#icon.src = this.#isOpen ? './assets/cross.svg' : './assets/burger.svg';
         this.#icon.alt = this.#isOpen ? 'Закрыть меню' : 'Открыть меню';
