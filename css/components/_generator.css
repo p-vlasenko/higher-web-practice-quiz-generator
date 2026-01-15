@@ -1,5 +1,5 @@
 .generator {
-	margin-top: 98px;
+	padding-bottom: calc(100vh / 2 - 344px);
 	max-width: 752px;
 	grid-column: 3 / span 8;
 	align-self: center;
@@ -33,30 +33,18 @@
 	resize: none;
 }
 
-/* .generator__textarea::placeholder {
-	color: var(--color-text-secondary);
-	opacity: 1;
-} */
-
 .generator__textarea:focus {
 	outline: 2px solid var(--color-primary);
 }
 
-/* .generator__textarea--error {
-	outline: 2px solid var(--color-error);
-} */
 
 @media (max-width: 1024px) {
 	.generator {
-		grid-column: span 8;
+		padding-bottom: calc(100vh / 2 - 120px);
 	}
 }
 
 @media (max-width: 428px) {
-	.generator {
-		grid-column: span 4;
-	}
-
 	.generator__button {
 		width: 100%;
 	}

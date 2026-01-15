@@ -11,3 +11,5 @@
 @import "../components/_quizzes.css";
 @import "../components/_quiz-card.css";
 @import "../components/_burger.css";
+@import "../components/_error.css";
+@import "../components/_modal.css";
