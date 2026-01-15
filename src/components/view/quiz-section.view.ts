@@ -1,17 +1,17 @@
 import { hide, show } from '@/utils/dom-utils';
 
 export class QuizSectionBrowserView {
-    private element: HTMLElement;
+    #element: HTMLElement;
 
     constructor(element: HTMLElement) {
-        this.element = element;
+        this.#element = element;
     }
 
     show(): void {
-        show(this.element);
+        show(this.#element);
     }
 
     hide(): void {
-        hide(this.element);
+        hide(this.#element);
     }
 }
