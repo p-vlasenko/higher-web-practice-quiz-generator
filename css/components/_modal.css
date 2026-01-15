@@ -15,15 +15,12 @@
 
 .modal__content {
     opacity: 1;
-	/* width: calc(var(--grid-container-width) * 6 / var(--grid-columns)); */
-	max-width: var(--grid-container-width);
+	max-width: var(--container-width);
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	/* border: 1px solid var(--color-border);
-	padding: var(--space-16) var(--space-24); */
 	border-radius: var(--radius-sm);
 	background-color: var(--color-surface);
-	box-shadow: var(--shadow-3);
+	box-shadow: var(--shadow-lg);
 }

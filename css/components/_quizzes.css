@@ -1,4 +1,5 @@
 .quizzes {
+	margin-top: 64px;
 	padding-top: 48px;
 	width: 1140px;
 	height: 100vh;
@@ -8,11 +9,10 @@
 	flex-wrap: wrap;
 }
 
-/* Container for quiz cards: keep fixed-size cards from overlapping */
 .quizzes__cards {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--grid-gutter);
+	gap: 24px;
 	align-items: flex-start;
 }
 
@@ -28,7 +28,6 @@
 .quizzes__empty-content {
 	margin: 0 auto;
 	width: 505px;
-	grid-column: 3 / span 8;
 	align-self: center;
 }
 
@@ -46,14 +45,12 @@
 		width: 750px;
 		gap: 20px;
 	}
-
-	.quizzes__empty-content {
-		grid-column: span 8;
-	}
 }
 
 @media (max-width: 414px) {
 	.quizzes {
+		padding-top: 0px;
+		margin-top: 0;
 		justify-content: center;
 		width: 750px;
 		gap: 20px;
@@ -61,11 +58,8 @@
 
 	.quizzes__cards {
 		width: 344px;
+		gap: 16px;
 		align-items: center;
-	}
-
-	.quizzes__empty-content {
-		grid-column: span 4;
 	}
 
 	.quizzes__empty-content .button {

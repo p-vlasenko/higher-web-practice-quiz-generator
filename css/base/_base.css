@@ -30,7 +30,7 @@ textarea::placeholder {
 	opacity: 1;
 }
 
-.textarea--invalid {
+.textarea_invalid {
 	outline: 2px solid var(--color-error);
 }
 
@@ -61,8 +61,7 @@ p {
 }
 
 .container {
-	/* max-width: var(--page-max-width); */
-	width: var(--grid-container-width);
+	width: var(--container-width);
 	margin: 0 auto;
 }
 
@@ -84,8 +83,7 @@ p {
 
 @media (max-width: 428px) {
 	.container {
-		/* max-width: var(--page-max-width); */
-		width: var(--grid-container-width);
+		width: var(--container-width);
 		margin: 0 auto;
 	}
 	h1 {

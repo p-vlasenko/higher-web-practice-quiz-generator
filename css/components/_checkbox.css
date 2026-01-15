@@ -28,8 +28,8 @@
 	-webkit-mask-size: contain;
 	-webkit-mask-repeat: no-repeat;
 	-webkit-mask-position: center;
-	mask-image: var(--icon-check);
-	-webkit-mask-image: var(--icon-check);
+	mask-image: var(--icon-checked);
+	-webkit-mask-image: var(--icon-checked);
 }
 
 .checkbox:checked {
@@ -63,6 +63,6 @@
 }
 
 .checkbox--error:checked::before {
-	mask-image: var(--icon-cross);
-	-webkit-mask-image: var(--icon-cross);
+	mask-image: var(--icon-close);
+	-webkit-mask-image: var(--icon-close);
 }

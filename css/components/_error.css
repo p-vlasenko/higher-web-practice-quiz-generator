@@ -1,7 +1,6 @@
 .error {
-	right: var(--grid-container-offset);
-	width: calc(var(--grid-container-width) * 4 / var(--grid-columns));
-	max-width: var(--grid-container-width);
+	width: 400px;
+	max-width: var(--container-width);
 	border-radius: var(--radius-sm);
 	border: 1px solid #EF4444;
 	padding: var(--space-12) var(--space-16);
@@ -9,4 +8,10 @@
 
 .error__content {
 	margin-bottom: var(--space-16);
+}
+
+@media (max-width: 428px) {
+	.error {
+		width: 360px;
+	}
 }

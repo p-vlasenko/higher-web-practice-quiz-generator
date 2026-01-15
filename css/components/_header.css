@@ -5,7 +5,7 @@
 }
 
 .header__content {
-	height: 100%;
+	height:  var(--header-height);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -51,7 +51,7 @@
 
 .header__menu-nav {
 	height: 100%;
-	width: var(--grid-container-width);
+	width: var(--container-width);
 	display: flex;
 	flex-direction: column;
 	justify-content: end;

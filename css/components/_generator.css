@@ -1,7 +1,6 @@
 .generator {
 	padding-bottom: calc(100vh / 2 - 344px);
 	max-width: 752px;
-	grid-column: 3 / span 8;
 	align-self: center;
 }
 
@@ -29,7 +28,7 @@
 	padding: var(--space-12);
 	border: 1px solid var(--color-border);
 	border-radius: var(--radius-sm);
-	box-shadow: var(--shadow-1);
+	box-shadow: var(--shadow-sm);
 	resize: none;
 }
 

@@ -1,17 +1,10 @@
 .main {
-	/* position: fixed; */
-	/* top: var(--header-height);
-	bottom: var(--footer-height); */
-	/* left: 0;
-	right: 0; */
-	/* overflow: auto; */
 }
 
 .main__content {
 	height: 100%;
 	display: flex;
 	justify-content: center;
-	/* padding: var(--space-64) 0; */
 }
 
 @media (max-width: 1024px) {

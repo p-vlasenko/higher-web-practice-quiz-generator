@@ -12,14 +12,13 @@
     -webkit-overflow-scrolling: touch;
 }
 
-.burger__menu.active {
+.burger__menu_active {
     display: flex;
     animation: fadeIn 0.3s ease;
     flex-direction: column;
 }
 
-html.menu-open,
-body.menu-open {
+.menu__overflow {
     overflow: hidden;
     height: 100%;
     position: fixed;
@@ -58,7 +57,7 @@ body.menu-open {
 }
 
 @media (max-width: 414px) {
-    .burger__menu.active {
+    .burger__menu_active {
         display: flex;
         align-items: center;
         justify-content: center;

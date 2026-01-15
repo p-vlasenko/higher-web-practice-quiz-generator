@@ -42,8 +42,8 @@
 
 .radio--success:checked::before {
 	background-color: var(--color-success);
-	mask-image: var(--icon-check);
-	-webkit-mask-image: var(--icon-check);
+	mask-image: var(--icon-checked);
+	-webkit-mask-image: var(--icon-checked);
 }
 
 .radio--error {
@@ -53,8 +53,8 @@
 
 .radio--error:checked::before {
 	background-color: var(--color-error);
-	mask-image: var(--icon-cross);
-	-webkit-mask-image: var(--icon-cross);
+	mask-image: var(--icon-close);
+	-webkit-mask-image: var(--icon-close);
 }
 
 .radio--success:checked::before,
