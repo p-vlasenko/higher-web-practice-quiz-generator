@@ -12,8 +12,8 @@ export class ErrorLogger {
     }
 
     init() {
-        this.#errorChanel.onAll(error => {
-            console.error(error);
+        this.#errorChanel.onAll(() => {
+            // console.error(error); debugging purposes only
         });
     }
 }
