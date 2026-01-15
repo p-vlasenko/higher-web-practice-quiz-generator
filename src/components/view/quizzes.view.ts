@@ -14,7 +14,7 @@ export class QuizzesBrowserView
         super();
         this.#element = getFirstElementOrFail('.quizzes');
         this.#cardsContainerOrigin = getTemplateFirstChild('quiz-list-template');
-        this.#emptyContentOrigin = getTemplateFirstChild('quiz-card-template');
+        this.#emptyContentOrigin = getTemplateFirstChild('empty-quizzes');
     }
 
     render(cards: QuizCardView[]): void {

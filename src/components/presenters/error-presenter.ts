@@ -1,15 +1,16 @@
 import type { ErrorChannel } from '@/messaging/types';
-import type { ErrorBrowserView } from '../view/error.view';
 import { QuizNotFoundError } from '@/errors/quiz-not-found';
 import { JsonParsingError } from '@/errors/json-parsing.error';
+import type { Renderer } from '@/types/base';
+import type { ErrorDescription } from '@/types/view';
 
 export type ErrorPresenterDeps = {
-    errorView: ErrorBrowserView;
+    errorView: Renderer<ErrorDescription>;
     errorChannel: ErrorChannel;
 };
 
 export class ErrorPresenter {
-    #errorView: ErrorBrowserView;
+    #errorView: Renderer<ErrorDescription>;
     #errorChannel: ErrorChannel;
 
     constructor({ errorView, errorChannel }: ErrorPresenterDeps) {
@@ -26,13 +27,13 @@ export class ErrorPresenter {
         });
 
         this.#errorChannel.on('quiz_validation_error', error => {
-            const details = error instanceof JsonParsingError
+            const message = error instanceof JsonParsingError
                 ? 'Ошибка: не удалось обработать JSON.'
                 : 'Ошибка: Неверная структура JSON.';
 
             this.#errorView.render({
-                message: 'Проверьте формат данных и попробуйте снова.',
-                details,
+                message,
+                details: 'Проверьте формат данных и попробуйте снова.',
             });
         });
 
@@ -49,6 +50,13 @@ export class ErrorPresenter {
                     details: 'Произошла неизвестная ошибка при загрузке теста.',
                 });
             }
+        });
+
+        this.#errorChannel.on('quizzes_loading_error', () => {
+            this.#errorView.render({
+                message: 'Ошибка: Ну удалось загрузить список тестов.',
+                details: 'Произошла неизвестная ошибка, повторите попытку позже.',
+            });
         });
     }
 }

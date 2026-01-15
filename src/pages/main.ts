@@ -1,13 +1,12 @@
 import { QuizGeneratorBrowserView } from '@view/quiz-generator.view';
 import { QuizzesModel } from '@/components/models/quizzes';
 import { QuizGeneratorPresenter } from '@/components/presenters/quiz-generator.presenter';
-import { ErrorPresenter } from '@/components/presenters/error-presenter';
 import { getFirstElementOrFail } from '@/utils/dom-utils';
 import { initDb } from '@/utils/storage';
 import { makeChannels } from '@/messaging/channels.factory';
 import { ErrorLogger } from '@/components/error-logger';
-import { ErrorBrowserView } from '@/components/view/error.view';
 import { BurgerBrowserView } from '@/components/view/burger.view';
+import { makeErrorPresenter } from '@/components/presenters/presenter.factories';
 
 const db = await initDb();
 const channels = makeChannels();
@@ -19,10 +18,7 @@ const quizGeneratorPresenter = new QuizGeneratorPresenter({
     ...channels,
 });
 
-const errorPresenter = new ErrorPresenter({
-    errorView: new ErrorBrowserView(getFirstElementOrFail('#error-toast')),
-    ...channels,
-});
+const errorPresenter = makeErrorPresenter(channels.errorChannel);
 
 const errorLogger = new ErrorLogger(channels);
 

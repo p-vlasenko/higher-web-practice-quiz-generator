@@ -15,6 +15,7 @@ import { QuizHeaderBrowserView } from '@view/quiz-header.veiw';
 import { QuestionOptionsViewFactory } from '@/components/presenters/question-options-view.factory';
 import type { Quiz } from '@/types/quiz';
 import { BurgerBrowserView } from '@/components/view/burger.view';
+import { makeErrorPresenter } from '@/components/presenters/presenter.factories';
 
 const extractUrlQuizId = (): string => {
     const id = getUrlParam('id');
@@ -71,6 +72,9 @@ const burgerView = new BurgerBrowserView({
     menu: getFirstElementOrFail('.burger__menu'),
 });
 
+const errorPresenter = makeErrorPresenter(channels.errorChannel);
+
+errorPresenter.init();
 burgerView.init();
 
 await db.get(quizId)

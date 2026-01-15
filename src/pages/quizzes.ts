@@ -7,6 +7,7 @@ import { QuizzesBrowserView } from '@/components/view/quizzes.view';
 import { QuizCardBrowserViewFactory } from '@/components/view/quiz-card-view.factory';
 import { QuizzesPresenter } from '@/components/presenters/quizzes.presernter';
 import { BurgerBrowserView } from '@/components/view/burger.view';
+import { makeErrorPresenter } from '@/components/presenters/presenter.factories';
 
 const channels = makeChannels();
 const { eventChannel, errorChannel } = channels;
@@ -30,6 +31,9 @@ const burgerView = new BurgerBrowserView({
     menu: getFirstElementOrFail('.burger__menu'),
 });
 
+const errorPresenter = makeErrorPresenter(channels.errorChannel);
+
+errorPresenter.init();
 burgerView.init();
 presenter.init();
 quizzesModel.loadQuizzes();

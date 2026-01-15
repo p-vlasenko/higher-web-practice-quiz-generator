@@ -46,19 +46,18 @@
 				</section>
 			</main>
 
-			<!-- <div class="modal">
+			<div class="modal modal_error">
 				<div class="modal__content">
-				</div>
-			</div> -->
-
-			<div class="toast toast--error hidden" id="error-toast">
-				<div class="toast__icon">&#10060;</div>
-				<div class="toast__content">
-					<p class="toast__title">Ошибка: не удалось обработать JSON.</p>
-					<p class="toast__message text text--caption">Проверьте формат данных и попробуйте снова.</p>
-				</div>
-				<div class="toast__actions">
-					<button type="button" class="button button--secondary toast__action">Продолжить</button>
+					<div class="error">
+						<div class="error__icon">&#10060;</div>
+						<div class="error__content">
+							<p class="error__title">Ошибка: произошла неизвестная ошибка.</p>
+							<p class="error__message text text--caption">Повторите попытку позднее.</p>
+						</div>
+						<div class="toast__actions">
+							<button type="button" class="button button--secondary error__close-button">Продолжить</button>
+						</div>
+					</div>
 				</div>
 			</div>
 
