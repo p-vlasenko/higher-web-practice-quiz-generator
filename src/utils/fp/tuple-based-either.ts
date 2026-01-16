@@ -8,7 +8,6 @@ type Either<L = unknown, R = unknown> = Left<L> | Right<R>;
 export type LeftOf<T extends Either> = T extends Left<infer U> ? U : never;
 export type RightOf<T extends Either> = T extends Right<infer U> ? U : never;
 
-// eslint-disable-next-line @typescript-eslint/no-namespace
 namespace Either {
     export const left = <T>(val: T): Left<T> => [val, undefined];
     export const right = <T>(val: T): Right<T> => [undefined, val];
