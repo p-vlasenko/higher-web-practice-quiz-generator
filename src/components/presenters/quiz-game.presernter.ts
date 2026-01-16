@@ -52,16 +52,16 @@ export class QuizGamePresenter {
 
     init(): void {
         this.#questionView.on('submit', payload => {
-            this.#commandChannel.emit('add_answer', payload);
+            this.#commandChannel.emit('QUIZ-GAME:QUESTION:ANSWER', payload);
         });
 
         this.#questionView.on('next_button_click', () => {
-            this.#commandChannel.emit('move_to_next_question', undefined);
+            this.#commandChannel.emit('QUIZ-GAME:QUESTION:NEXT', undefined);
         });
 
         this.#resultView.on('restart', () => {
             this.#quizSectionView.show();
-            this.#commandChannel.emit('restart_quiz_game', undefined);
+            this.#commandChannel.emit('QUIZ-GAME:RESTART', undefined);
         });
 
         this.#eventChannel.on('quiz_started', ({ quiz: { title, description, questions } }) => {

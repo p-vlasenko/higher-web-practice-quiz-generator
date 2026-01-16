@@ -5,10 +5,10 @@ export type SelectedOptions = {
 };
 
 export type CommandsMap = {
-    ['add_quiz']: QuizAddingParams;
-    ['move_to_next_question']: undefined;
-    ['restart_quiz_game']: undefined;
-    ['add_answer']: SelectedOptions;
+    ['QUIZ:ADD']: QuizAddingParams;
+    ['QUIZ-GAME:QUESTION:NEXT']: undefined;
+    ['QUIZ-GAME:RESTART']: undefined;
+    ['QUIZ-GAME:QUESTION:ANSWER']: SelectedOptions;
 };
 
 export type QuizAddingParams = {

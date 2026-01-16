@@ -27,7 +27,7 @@ export class QuizzesModel {
 
     init() {
         this.#commandChannel.on(
-            'add_quiz',
+            'QUIZ:ADD',
             async ({ quiz }) => { await this.add(quiz); },
         );
     }

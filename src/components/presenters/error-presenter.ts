@@ -54,7 +54,7 @@ export class ErrorPresenter {
 
         this.#errorChannel.on('quizzes_loading_error', () => {
             this.#errorView.render({
-                message: 'Ошибка: Ну удалось загрузить список тестов.',
+                message: 'Ошибка: Нe удалось загрузить список тестов.',
                 details: 'Произошла неизвестная ошибка, повторите попытку позже.',
             });
         });

@@ -32,7 +32,7 @@ export class QuizGeneratorPresenter {
     init() {
         this.#generatorView.on(
             'submit',
-            payload => this.#commandChannel.emit('add_quiz', payload),
+            payload => this.#commandChannel.emit('QUIZ:ADD', payload),
         );
 
         this.#generatorView.on(

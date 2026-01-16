@@ -29,15 +29,15 @@ export class QuizGameModel {
     }
 
     start(): void {
-        this.#commandChannel.on('add_answer', ({ selectedOptionIds }) => {
+        this.#commandChannel.on('QUIZ-GAME:QUESTION:ANSWER', ({ selectedOptionIds }) => {
             this.addAnswer(selectedOptionIds);
         });
 
-        this.#commandChannel.on('move_to_next_question', () => {
+        this.#commandChannel.on('QUIZ-GAME:QUESTION:NEXT', () => {
             this.moveToNextQuestion();
         });
 
-        this.#commandChannel.on('restart_quiz_game', () => {
+        this.#commandChannel.on('QUIZ-GAME:RESTART', () => {
             this.restart();
         });
 
