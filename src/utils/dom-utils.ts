@@ -36,11 +36,11 @@ export const setChildren = (container: HTMLElement, children: HTMLElement[]) => 
 };
 
 export const show = (element: HTMLElement): void => {
-    element.classList.remove('hidden');
+    element.hidden = false;
 };
 
 export const hide = (element: HTMLElement): void => {
-    element.classList.add('hidden');
+    element.hidden = true;
 };
 
 export const cloneTemplate = <T extends HTMLElement = HTMLElement>(templateId: string): T => {

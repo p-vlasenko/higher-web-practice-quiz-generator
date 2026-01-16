@@ -69,7 +69,7 @@ const startQuiz = (quiz: Quiz) => {
 };
 
 const burgerView = new BurgerBrowserView({
-    menu: getFirstElementOrFail('.burger__menu'),
+    menu: getFirstElementOrFail('.burger-menu'),
 });
 
 const errorPresenter = makeErrorPresenter(channels.errorChannel);

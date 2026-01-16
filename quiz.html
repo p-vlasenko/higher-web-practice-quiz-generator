@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<div class="content">
-			<header class="header container">
+			<header class="header">
 				<div class="header__content container">
 					<a href="./index.html">
 						<img class="header__logo" src="./assets/logo.svg" alt="Логотип" />
@@ -20,7 +20,7 @@
 					<button class="header__menu-button" type="button">
 						<img class="header__menu-icon" src="./assets/burger.svg" alt="Меню" />
 					</button>
-					<div class="burger__menu">
+					<div class="burger-menu">
 						<div class="dropdown-list">
 							<span class="dropdown-text">Добавить квиз</span>
 							<span class="dropdown-text">Сохранённые квизы</span>
@@ -31,7 +31,7 @@
 
 			<main class="main">
 				<div class="main__content container">
-					<section class="quiz hidden">
+					<section class="quiz" hidden>
 						<div class="quiz__head">
 							<h1 class="quiz__title"></h1>
 							<p class="quiz__description">Описание квиза</p>
@@ -45,12 +45,12 @@
 								<div class="quiz__question"></div>
 								<div class="quiz__buttons">
 									<button type="submit" class="button button_primary quiz__submit">Ответить</button>
-									<button type="button" class="button button_primary quiz__next hidden"></button>
+									<button type="button" class="button button_primary quiz__next" hidden></button>
 								</div>
 							</form>
 						</div>
 					</section>
-					<section class="quiz-result hidden">
+					<section class="quiz-result" hidden>
 						<h2 class="quiz-result__title">Тест завершен</h2>
 						<p class="quiz-result__details">Вы ответили правильно на все вопросы</p>
 						<p class="quiz-result__summary text text_caption">Ваши знания на высоте</p>
@@ -102,7 +102,7 @@
 					<input class="radio option__input" type="radio" name="question" value="" />
 					<span class="option__text"></span>
 				</label>
-				<div class="option__message text text_caption hidden"></div>
+				<div class="option__message text text_caption" hidden></div>
 			</div>
 		</template>
 
@@ -112,7 +112,7 @@
 					<input class="checkbox option__input" type="checkbox" name="question" value="" />
 					<span class="option__text"></span>
 				</label>
-				<div class="option__message text text_caption hidden" ></div>
+				<div class="option__message text text_caption" hidden ></div>
 			</div>
 		</template>
 

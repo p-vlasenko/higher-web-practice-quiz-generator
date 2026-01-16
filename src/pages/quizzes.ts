@@ -28,7 +28,7 @@ const presenter = new QuizzesPresenter({
 });
 
 const burgerView = new BurgerBrowserView({
-    menu: getFirstElementOrFail('.burger__menu'),
+    menu: getFirstElementOrFail('.burger-menu'),
 });
 
 const errorPresenter = makeErrorPresenter(channels.errorChannel);

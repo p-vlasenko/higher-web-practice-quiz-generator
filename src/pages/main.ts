@@ -23,7 +23,7 @@ const errorPresenter = makeErrorPresenter(channels.errorChannel);
 const errorLogger = new ErrorLogger(channels);
 
 const burgerView = new BurgerBrowserView({
-    menu: getFirstElementOrFail('.burger__menu'),
+    menu: getFirstElementOrFail('.burger-menu'),
 });
 
 burgerView.init();
