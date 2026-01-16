@@ -1,5 +1,5 @@
 .error {
-	width: 400px;
+	width: 360px;
 	max-width: var(--container-width);
 	border-radius: var(--radius-sm);
 	border: 1px solid #EF4444;
@@ -10,8 +10,8 @@
 	margin-bottom: var(--space-16);
 }
 
-@media (max-width: 450px) {
+@media (min-width: 451px) {
 	.error {
-		width: 360px;
+		width: 400px;
 	}
 }

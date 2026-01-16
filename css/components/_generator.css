@@ -1,5 +1,5 @@
 .generator {
-	padding-bottom: calc(100vh / 2 - 344px);
+	padding-bottom: calc(100vh / 2 - 100px);
 	max-width: 752px;
 	align-self: center;
 }
@@ -36,15 +36,19 @@
 	outline: 2px solid var(--color-primary);
 }
 
+.generator__button {
+	width: 100%;
+}
 
-@media (max-width: 1200px) {
+
+@media (min-width: 1200px) {
 	.generator {
-		padding-bottom: calc(100vh / 2 - 120px);
+		padding-bottom: calc(100vh / 2 - 344px);
 	}
 }
 
-@media (max-width: 450px) {
+@media (min-width: 451px) {
 	.generator__button {
-		width: 100%;
+		width: auto;
 	}
 }

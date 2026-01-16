@@ -17,7 +17,7 @@
 }
 
 .header__menu-button {
-	display: none;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 44px;
@@ -34,12 +34,18 @@
 	display: block;
 }
 
-@media (max-width: 450px) {
+/* Mobile-first: base styles target small screens */
+.header__nav {
+	display: none;
+}
+
+/* Larger screens */
+@media (min-width: 451px) {
 	.header__nav {
-		display: none;
+		display: flex;
 	}
 
 	.header__menu-button {
-		display: flex;
+		display: none;
 	}
 }

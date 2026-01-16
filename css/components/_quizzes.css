@@ -1,19 +1,22 @@
 .quizzes {
-	margin-top: 64px;
-	padding-top: 48px;
-	width: 1140px;
+	/* Mobile-first: base (small screens) */
+	padding-top: 0px;
+	margin-top: 0;
+	justify-content: center;
+	width: 100%;
+	gap: 20px;
 	height: 100vh;
 	display: flex;
 	flex-direction: row;
-	gap: 24px;
 	flex-wrap: wrap;
 }
 
 .quizzes__cards {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 24px;
-	align-items: flex-start;
+	gap: 16px;
+	align-items: center;
+	width: 100vw * 0.95;
 }
 
 .quizzes__title {
@@ -40,29 +43,34 @@
 	margin-bottom: var(--space-24);
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 451px) {
 	.quizzes {
-		width: 750px;
-		gap: 20px;
-	}
-}
-
-@media (max-width: 450px) {
-	.quizzes {
-		padding-top: 0px;
-		margin-top: 0;
-		justify-content: center;
-		width: 750px;
+		margin-top: 48px;
 		gap: 20px;
 	}
 
 	.quizzes__cards {
-		width: 344px;
+		width: 700px;
 		gap: 16px;
 		align-items: center;
 	}
+}
 
-	.quizzes__empty-content .button {
-		width: 100%;
+@media (min-width: 1201px) {
+	.quizzes {
+		margin-top: 64px;
+		padding-top: 48px;
+		width: 1140px;
+		gap: 24px;
 	}
+
+	.quizzes__cards {
+		gap: 24px;
+		align-items: flex-start;
+		width: auto;
+	}
+}
+
+.quizzes__empty-content .button {
+	width: 100%;
 }

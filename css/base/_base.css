@@ -35,10 +35,10 @@ textarea::placeholder {
 }
 
 h1 {
-	font-size: 32px;
+	font-size: 24px;
 	font-style: bold;
 	line-height: 120%;
-	font-weight: 700;
+	font-weight: 600;
 	margin: 0;
 }
 
@@ -81,13 +81,9 @@ p {
 }
 
 
-@media (max-width: 450px) {
-	.container {
-		width: var(--container-width);
-		margin: 0 auto;
-	}
+@media (min-width: 451px) {
 	h1 {
-		font-size: 24px;
-		font-weight: 600;
+		font-size: 32px;
+		font-weight: 700;
 	}
 }

@@ -26,7 +26,7 @@ export class QuizCardBrowserView
         this.#title = getFirstElementOrFail('.quiz-card__title', element);
         this.#description = getFirstElementOrFail('.quiz-card__description', element);
         this.#count = getFirstElementOrFail('.quiz-card__count', element);
-        this.#action = getFirstElementOrFail('.quiz-card__action', element);
+        this.#action = getFirstElementOrFail('.quiz-card__link', element);
 
         this.#initListeners();
     }

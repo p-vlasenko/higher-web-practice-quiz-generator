@@ -1,5 +1,6 @@
 .quiz {
-	padding-bottom: calc(100vh / 2 - 250px);
+	/* Mobile-first: smaller padding by default */
+	padding-bottom: calc(100vh / 2 - 100px);
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-24);
@@ -22,18 +23,20 @@
 	margin-bottom: var(--space-24);
 }
 
-@media (max-width: 1200px) {
+/* Larger screens */
+@media (min-width: 1201px) {
 	.quiz {
-		padding-bottom: calc(100vh / 2 - 100px);
+		padding-bottom: calc(100vh / 2 - 250px);
 	}
 }
 
-@media (max-width: 450px) {
-	.quiz__buttons .button {
-		width: 100%;
-	}
+/* Buttons full-width on small screens */
+.quiz__buttons .button {
+	width: 100%;
+}
 
+@media (min-width: 451px) {
 	.quiz__buttons .button {
-		width: 100%;
+		width: auto;
 	}
 }
