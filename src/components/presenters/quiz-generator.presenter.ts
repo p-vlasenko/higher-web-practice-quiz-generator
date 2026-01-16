@@ -37,10 +37,10 @@ export class QuizGeneratorPresenter {
 
         this.#generatorView.on(
             'validation_error',
-            payload => this.#errorChannel.emit('quiz_validation_error', payload),
+            payload => this.#errorChannel.emit('ERROR:QUIZ-VALIDATION', payload),
         );
 
-        this.#eventChannel.on('quiz_added', async () => {
+        this.#eventChannel.on('QUIZ:ADDED', async () => {
             this.#generatorView.clear();
             window.location.href = './quizzes.html';
         });

@@ -25,12 +25,12 @@ export class QuizzesPresenter {
     }
 
     init() {
-        this.#eventChannel.on('quizzes_loaded', ({ quizzes }) => {
+        this.#eventChannel.on('QUIZZES:LOADED', ({ quizzes }) => {
             const cards = quizzes.map(quiz => this.#quizCardFactory.make(quiz));
             this.#quizzesView.render(cards);
         });
 
-        this.#errorChannel.on('quizzes_loading_error', () => {
+        this.#errorChannel.on('ERROR:QUIZZES-LOADING', () => {
             this.#quizzesView.clear();
         });
 

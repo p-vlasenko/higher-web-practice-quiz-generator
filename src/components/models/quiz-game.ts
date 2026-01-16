@@ -41,7 +41,7 @@ export class QuizGameModel {
             this.restart();
         });
 
-        this.#eventChannel.emit('quiz_started', { quiz: this.#quiz });
+        this.#eventChannel.emit('QUIZ-GAME:STARTED', { quiz: this.#quiz });
         this.#publishQuestion();
     }
 
@@ -63,7 +63,7 @@ export class QuizGameModel {
         }
 
         const isLast = this.#questionIndex >= this.#quiz.questions.length - 1;
-        this.#eventChannel.emit('question_answered', { question, selectedOptionIds, result, isLast });
+        this.#eventChannel.emit('QUIZ-GAME:QUESTION:ANSWERED', { question, selectedOptionIds, result, isLast });
     }
 
     moveToNextQuestion(): void {
@@ -88,7 +88,7 @@ export class QuizGameModel {
     #finish(): void {
         this.#done = true;
 
-        this.#eventChannel.emit('quiz_finished', {
+        this.#eventChannel.emit('QUIZ-GAME:FINISHED', {
             correct: this.#correctAnswers,
             total: this.#quiz.questions.length,
         });
@@ -107,7 +107,7 @@ export class QuizGameModel {
             return;
         };
 
-        this.#eventChannel.emit('question_ready', {
+        this.#eventChannel.emit('QUIZ-GAME:QUESTION:READY', {
             question,
             currentIndex: this.#questionIndex,
             total: this.#quiz.questions.length,

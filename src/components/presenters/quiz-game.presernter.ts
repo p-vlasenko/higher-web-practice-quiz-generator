@@ -64,13 +64,13 @@ export class QuizGamePresenter {
             this.#commandChannel.emit('QUIZ-GAME:RESTART', undefined);
         });
 
-        this.#eventChannel.on('quiz_started', ({ quiz: { title, description, questions } }) => {
+        this.#eventChannel.on('QUIZ-GAME:STARTED', ({ quiz: { title, description, questions } }) => {
             this.#quizHeaderView.render({ title, description });
             this.#quizProgressView.render({ currentIndex: 0, total: questions.length });
         });
 
         this.#eventChannel.on(
-            'question_ready',
+            'QUIZ-GAME:QUESTION:READY',
             ({ question, currentIndex, total }) => {
                 this.#quizSectionView.show();
                 this.#quizProgressView.render({ currentIndex, total });
@@ -78,11 +78,11 @@ export class QuizGamePresenter {
                 this.#setUrlQuestion(currentIndex);
             });
 
-        this.#eventChannel.on('question_answered', ({ question, result, selectedOptionIds, isLast }) => {
+        this.#eventChannel.on('QUIZ-GAME:QUESTION:ANSWERED', ({ question, result, selectedOptionIds, isLast }) => {
             this.#renderAnsweredQuestion(question, selectedOptionIds, result, isLast);
         });
 
-        this.#eventChannel.on('quiz_finished', result => {
+        this.#eventChannel.on('QUIZ-GAME:FINISHED', result => {
             this.#quizSectionView.hide();
             this.#renderResultInfo(result);
             this.#removeUrlQuestion();

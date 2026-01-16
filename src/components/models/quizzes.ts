@@ -36,17 +36,17 @@ export class QuizzesModel {
         try {
             const quiz = { id: uuidV7(), ...quizData };
             await this.#db.add(quiz);
-            this.#eventChannel.emit('quiz_added', { quiz });
+            this.#eventChannel.emit('QUIZ:ADDED', { quiz });
         }
         catch (error) {
-            this.#errorChannel.emit('quiz_adding_error', new QuizAddingError(error));
+            this.#errorChannel.emit('ERROR:QUIZ-ADDING', new QuizAddingError(error));
         }
     }
 
     async loadQuizzes(): Promise<void> {
         await this.#db.getList().then(Either.match(
-            err => this.#errorChannel.emit('quizzes_loading_error', err),
-            quizzes => this.#eventChannel.emit('quizzes_loaded', { quizzes }),
+            err => this.#errorChannel.emit('ERROR:QUIZZES-LOADING', err),
+            quizzes => this.#eventChannel.emit('QUIZZES:LOADED', { quizzes }),
         ));
     }
 }

@@ -24,19 +24,19 @@ export type QuizAnswerResult = {
 };
 
 export type EventsMap = {
-    ['quizzes_loaded']: QuizzesLoadedPayload;
-    ['quiz_added']: { quiz: Quiz };
-    ['quiz_started']: { quiz: Quiz };
-    ['question_ready']: {
+    ['QUIZZES:LOADED']: QuizzesLoadedPayload;
+    ['QUIZ:ADDED']: { quiz: Quiz };
+    ['QUIZ-GAME:STARTED']: { quiz: Quiz };
+    ['QUIZ-GAME:QUESTION:READY']: {
         question: Question;
         currentIndex: number;
         total: number;
     };
-    ['question_answered']: {
+    ['QUIZ-GAME:QUESTION:ANSWERED']: {
         question: Question;
         result: QuizAnswerResult;
         selectedOptionIds: Set<number>;
         isLast: boolean;
     };
-    ['quiz_finished']: QuizResult;
+    ['QUIZ-GAME:FINISHED']: QuizResult;
 };

@@ -80,7 +80,7 @@ burgerView.init();
 await db.get(quizId)
     .then(
         Either.match(
-            err => errorChannel.emit('quiz_getting_error', err),
+            err => errorChannel.emit('ERROR:QUIZ-GETTING', err),
             startQuiz,
         ),
     );

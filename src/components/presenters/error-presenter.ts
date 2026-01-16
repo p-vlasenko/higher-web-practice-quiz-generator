@@ -19,14 +19,14 @@ export class ErrorPresenter {
     }
 
     init() {
-        this.#errorChannel.on('quiz_adding_error', () => {
+        this.#errorChannel.on('ERROR:QUIZ-ADDING', () => {
             this.#errorView.render({
                 message: 'Ошибка: Не удалось сохранить тест.',
                 details: 'Произошла ошибка при сохранении в базу данных.',
             });
         });
 
-        this.#errorChannel.on('quiz_validation_error', error => {
+        this.#errorChannel.on('ERROR:QUIZ-VALIDATION', error => {
             const message = error instanceof JsonParsingError
                 ? 'Ошибка: не удалось обработать JSON.'
                 : 'Ошибка: Неверная структура JSON.';
@@ -37,7 +37,7 @@ export class ErrorPresenter {
             });
         });
 
-        this.#errorChannel.on('quiz_getting_error', err => {
+        this.#errorChannel.on('ERROR:QUIZ-GETTING', err => {
             if (err instanceof QuizNotFoundError) {
                 this.#errorView.render({
                     message: 'Ошибка: Тест не найден.',
@@ -52,7 +52,7 @@ export class ErrorPresenter {
             }
         });
 
-        this.#errorChannel.on('quizzes_loading_error', () => {
+        this.#errorChannel.on('ERROR:QUIZZES-LOADING', () => {
             this.#errorView.render({
                 message: 'Ошибка: Нe удалось загрузить список тестов.',
                 details: 'Произошла неизвестная ошибка, повторите попытку позже.',
