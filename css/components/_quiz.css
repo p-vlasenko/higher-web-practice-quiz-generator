@@ -22,8 +22,18 @@
 	margin-bottom: var(--space-24);
 }
 
-@media (max-width: 428px) {
-	.quiz__actions .button {
+@media (max-width: 1200px) {
+	.quiz {
+		padding-bottom: calc(100vh / 2 - 100px);
+	}
+}
+
+@media (max-width: 450px) {
+	.quiz__buttons .button {
+		width: 100%;
+	}
+
+	.quiz__buttons .button {
 		width: 100%;
 	}
 }

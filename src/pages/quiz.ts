@@ -77,10 +77,7 @@ const errorPresenter = makeErrorPresenter(channels.errorChannel);
 errorPresenter.init();
 burgerView.init();
 
-await db.get(quizId)
-    .then(
-        Either.match(
-            err => errorChannel.emit('ERROR:QUIZ-GETTING', err),
-            startQuiz,
-        ),
-    );
+await db.get(quizId).then(Either.match(
+    err => errorChannel.emit('ERROR:QUIZ-GETTING', err),
+    startQuiz,
+));

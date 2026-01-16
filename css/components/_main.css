@@ -7,7 +7,7 @@
 	justify-content: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
 	.main {
 		bottom: 0;
 	}
@@ -17,7 +17,7 @@
 	}
 }
 
-@media (max-width: 428px) {
+@media (max-width: 450px) {
 	.main__content {
 		padding: var(--space-24) 0;
 	}

@@ -37,13 +37,13 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
 	.generator {
 		padding-bottom: calc(100vh / 2 - 120px);
 	}
 }
 
-@media (max-width: 428px) {
+@media (max-width: 450px) {
 	.generator__button {
 		width: 100%;
 	}

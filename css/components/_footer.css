@@ -13,7 +13,7 @@
 	color: var(--color-text-secondary);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
 	.footer {
 		display: none;
 	}

@@ -56,7 +56,7 @@
 
 }
 
-@media (max-width: 414px) {
+@media (max-width: 450px) {
     .burger__menu_active {
         display: flex;
         align-items: center;

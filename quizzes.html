@@ -35,6 +35,19 @@
 				</div>
 			</main>
 
+			<div class="modal modal_error">
+				<div class="modal__content">
+					<div class="error">
+						<div class="error__icon">&#10060;</div>
+						<div class="error__content">
+							<p class="error__title">Ошибка: произошла неизвестная ошибка.</p>
+							<p class="error__message text text_caption">Повторите попытку позднее.</p>
+						</div>
+						<button type="button" class="button button_secondary error__close-button">Продолжить</button>
+					</div>
+				</div>
+			</div>
+
 			<template id="empty-quizzes">
 				<div class="quizzes__empty">
 					<div class="quizzes__empty-content">
@@ -62,21 +75,6 @@
 					</div>
 				</div>
 			</template>
-
-			<div class="modal modal_error">
-				<div class="modal__content">
-					<div class="error">
-						<div class="error__icon">&#10060;</div>
-						<div class="error__content">
-							<p class="error__title">Ошибка: произошла неизвестная ошибка.</p>
-							<p class="error__message text text_caption">Повторите попытку позднее.</p>
-						</div>
-						<div class="toast__actions">
-							<button type="button" class="button button_secondary error__close-button">Продолжить</button>
-						</div>
-					</div>
-				</div>
-			</div>
 
 			<footer class="footer">
 				<div class="footer__content container">Учебный проект 2025</div>
