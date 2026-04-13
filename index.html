@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="./assets/logo-CsdLGdJ6.svg" />
+		<title>Генератор квизов</title>
+		<script type="module" crossorigin src="./assets/main-DZkdyvrL.js"></script>
+		<link rel="modulepreload" crossorigin href="./assets/presenter.factories-CwnHWCpT.js">
+		<link rel="modulepreload" crossorigin href="./assets/quizzes-DueeLNNY.js">
+		<link rel="stylesheet" crossorigin href="./assets/main-3WShs9w_.css">
+	</head>
+	<body>
+		<div class="content">
+			<header class="header">
+				<div class="header__content container">
+					<a href="./index.html">
+						<img class="header__logo" src="./assets/logo-CsdLGdJ6.svg" alt="Логотип" />
+					</a>
+					<nav class="header__nav">
+						<a class="button button_secondary" href="./quizzes.html">Посмотреть сохранённые квизы</a>
+					</nav>
+					<button class="header__menu-button" type="button">
+						<img class="header__menu-icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8%2012H36'%20stroke='%231E40FF'%20stroke-width='2'/%3e%3cpath%20d='M8%2022H36'%20stroke='%231E40FF'%20stroke-width='2'/%3e%3cpath%20d='M8%2032H36'%20stroke='%231E40FF'%20stroke-width='2'/%3e%3c/svg%3e" alt="Меню" />
+					</button>
+					<div class="burger-menu">
+						<div class="dropdown-list">
+							<span class="dropdown-text">Добавить квиз</span>
+							<span class="dropdown-text">Сохранённые квизы</span>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<main class="main">
+				<section class="generator container">
+					<h1 class="generator__title">Генератор квизов</h1>
+					<p class="generator__hint">Вставьте JSON...</p>
+					<p class="generator__label text text_caption">Ваш JSON</p>
+					<form class="generator__form">
+						<textarea
+							id="quiz-json-input"
+							name="quiz-json-input"
+							class="generator__textarea text text--mono"
+							placeholder="{&#10;&laquo;title&raquo;: &laquo;Placeholder&raquo;,&#10;&laquo;questions&raquo;: []&#10;}"
+						></textarea>
+						<button type="submit" class="button generator__button button_primary">Сгенерировать</button>
+					</form>
+				</section>
+			</main>
+
+			<div class="modal modal_error">
+				<div class="modal__content">
+					<div class="error">
+						<div class="error__icon">&#10060;</div>
+						<div class="error__content">
+							<p class="error__title">Ошибка: произошла неизвестная ошибка.</p>
+							<p class="error__message text text_caption">Повторите попытку позднее.</p>
+						</div>
+						<button type="button" class="button button_secondary error__close-button">Продолжить</button>
+					</div>
+				</div>
+			</div>
+
+			<footer class="footer">
+				<div class="footer__content container">Учебный проект 2025</div>
+			</footer>
+	</div>
+	</body>
+</html>

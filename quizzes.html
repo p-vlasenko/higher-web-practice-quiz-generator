@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="./assets/logo-CsdLGdJ6.svg" />
+		<title>Ваши квизы</title>
+		<script type="module" crossorigin src="./assets/quizzes-Lax38MIz.js"></script>
+		<link rel="modulepreload" crossorigin href="./assets/presenter.factories-CwnHWCpT.js">
+		<link rel="modulepreload" crossorigin href="./assets/quizzes-DueeLNNY.js">
+		<link rel="stylesheet" crossorigin href="./assets/quizzes-X3I7oBfw.css">
+	</head>
+	<body>
+		<div class="content">
+			<header class="header">
+				<div class="header__content container">
+					<a href="./index.html">
+						<img class="header__logo" src="./assets/logo-CsdLGdJ6.svg" alt="Логотип" />
+					</a>
+					<nav class="header__nav">
+						<a class="button button_primary" href="./index.html">Добавить квиз</a>
+					</nav>
+					<button class="header__menu-button" type="button">
+						<img class="header__menu-icon" src="data:image/svg+xml,%3csvg%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M8%2012H36'%20stroke='%231E40FF'%20stroke-width='2'/%3e%3cpath%20d='M8%2022H36'%20stroke='%231E40FF'%20stroke-width='2'/%3e%3cpath%20d='M8%2032H36'%20stroke='%231E40FF'%20stroke-width='2'/%3e%3c/svg%3e" alt="Меню" />
+					</button>
+					<div class="burger-menu">
+						<div class="dropdown-list">
+							<span class="dropdown-text">Добавить квиз</span>
+							<span class="dropdown-text">Сохранённые квизы</span>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<main class="main">
+				<div class="main__content container">
+					<section class="quizzes"></section>
+				</div>
+			</main>
+
+			<div class="modal modal_error">
+				<div class="modal__content">
+					<div class="error">
+						<div class="error__icon">&#10060;</div>
+						<div class="error__content">
+							<p class="error__title">Ошибка: произошла неизвестная ошибка.</p>
+							<p class="error__message text text_caption">Повторите попытку позднее.</p>
+						</div>
+						<button type="button" class="button button_secondary error__close-button">Продолжить</button>
+					</div>
+				</div>
+			</div>
+
+			<template id="empty-quizzes">
+				<div class="quizzes__empty">
+					<div class="quizzes__empty-content">
+						<h1 class="quizzes__empty-title">У вас нет сохранённых квизов(</h1>
+						<p class="quizzes__empty-subtitle">Но вы можете добавить!</p>
+						<a class="button button_primary" href="./index.html">Добавить квиз</a>
+					</div>
+				</div>
+			</template>
+
+			<template  id="quiz-list-template">
+				<fragment>
+					<h1 class="quizzes__title">Ваши квизы</h1>
+					<div class="quizzes__cards"></div>
+				</fragment>
+			</template>
+
+			<template id="quiz-card-template">
+				<div class="quiz-card">
+					<h3 class="quiz-card__title"></h3>
+					<p class="quiz-card__description"></p>
+					<div class="quiz-card__footer">
+						<div class="quiz-card__count text text_caption">0 вопросов</div>
+						<a class="link quiz-card__link" href="#">Пройти</a>
+					</div>
+				</div>
+			</template>
+
+			<footer class="footer">
+				<div class="footer__content container">Учебный проект 2025</div>
+			</footer>
+		</div>
+
+	</body>
+</html>
