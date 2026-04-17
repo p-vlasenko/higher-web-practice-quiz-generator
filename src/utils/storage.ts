@@ -76,6 +76,10 @@ class QuizIndexedDbStorage implements QuizStorage {
             return makeQuizzesLoadingErrorResult(error);
         }
     }
+
+    async clear(): Promise<void> {
+        return this.#db.clear(SCHEMA_NAME);
+    }
 }
 
 export const initDb = async () => {

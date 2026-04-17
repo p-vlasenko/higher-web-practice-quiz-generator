@@ -63,3 +63,23 @@ npm run preview   # локально просмотреть сборку
 - Примеры квизов: `quiz-examples/`
 - Точки входа: `src/pages/`
 - Основная логика игры: `src/models/quiz-game.ts`
+
+## Deploy to GitHub Pages
+
+Проект поддерживает публикацию на GitHub Pages с помощью пакета `gh-pages`.
+
+1. Убедитесь, что все изменения закоммичены и запушены в репозиторий на GitHub.
+2. Соберите проект для продакшена и опубликуйте:
+
+```bash
+npm run deploy
+```
+
+Команда `deploy` использует `gh-pages` и публикует содержимое папки `dist` в ветку `gh-pages`.
+
+[адрес приложения](https://p-vlasenko.github.io/higher-web-practice-quiz-generator)
+
+Примечания:
+- В `vite.config.js` установлено `base: './'`, что обеспечивает корректную работу на GitHub Pages.
+- В настройках репозитория (Settings → Pages) можно проверить статус публикации и выбрать ветку `gh-pages`.
+
