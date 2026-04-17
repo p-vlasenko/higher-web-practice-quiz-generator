@@ -10,9 +10,8 @@ import { BurgerBrowserView } from '@/components/view/burger.view';
 import { makeErrorPresenter } from '@/components/presenters/presenter.factories';
 
 const channels = makeChannels();
-const { eventChannel, errorChannel } = channels;
 
-const errorLogger = new ErrorLogger({ errorChannel });
+const errorLogger = new ErrorLogger(channels);
 errorLogger.init();
 
 const db = await initDb();
@@ -23,8 +22,7 @@ const presenter = new QuizzesPresenter({
         quizCardTemplate: getTemplateFirstChild('quiz-card-template'),
     }),
     quizzesView: new QuizzesBrowserView(),
-    eventChannel,
-    errorChannel,
+    ...channels,
 });
 
 const burgerView = new BurgerBrowserView({
@@ -35,5 +33,6 @@ const errorPresenter = makeErrorPresenter(channels.errorChannel);
 
 errorPresenter.init();
 burgerView.init();
+quizzesModel.init();
 presenter.init();
 quizzesModel.loadQuizzes();

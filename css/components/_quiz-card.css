@@ -21,6 +21,23 @@
 	color: var(--color-primary);
 }
 
+.quiz-card__header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.quiz-card__delete-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    /* background-color: #007bff; */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .quiz-card__title {
 	margin-bottom: var(--space-8);
 }

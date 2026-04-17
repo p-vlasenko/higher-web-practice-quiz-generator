@@ -4,6 +4,7 @@ import type { Either } from '@/utils/fp/tuple-based-either';
 import type { Quiz, QuizData } from './quiz';
 import type { QuizzesLoadingError } from '@/errors/quizzes-loading.error';
 import type { QuizAddingError } from '@/errors/quiz-adding.error';
+import type { QuizRemovingError } from '@/errors/quiz-removing.error.js';
 
 export type EventName<T extends object> = keyof T;
 
@@ -40,9 +41,11 @@ export type EventBus<Messages extends object> = {
 export type GetQuizResult = Either<QuizGettingError | QuizNotFoundError, Quiz>;
 export type LoadQuizzesResult = Either<QuizzesLoadingError, Quiz[]>;
 export type AddQuizResult = Either<QuizAddingError, Quiz>;
+export type RemoveQuizResult = Either<QuizRemovingError, true>;
 
 export type QuizStorage = {
     add(quiz: QuizData): Promise<AddQuizResult>;
     get(id: string): Promise<GetQuizResult>;
+    remove(id: string): Promise<RemoveQuizResult>;
     getList(): Promise<LoadQuizzesResult>;
 };

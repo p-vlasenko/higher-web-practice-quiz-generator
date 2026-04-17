@@ -1,6 +1,4 @@
-import { v7 as uuidV7 } from 'uuid';
 import { Either } from '@/utils/fp/tuple-based-either';
-import { QuizAddingError } from '@/errors/quiz-adding.error';
 import type { Channels } from '@/messaging/types';
 import type { EventsMap } from '@/messaging/events';
 import type { CommandsMap } from '@/messaging/commands';
@@ -30,23 +28,31 @@ export class QuizzesModel {
             'QUIZ:ADD',
             async ({ quiz }) => { await this.add(quiz); },
         );
-    }
 
-    async add(quizData: QuizData): Promise<void> {
-        try {
-            const quiz = { id: uuidV7(), ...quizData };
-            await this.#db.add(quiz);
-            this.#eventChannel.emit('QUIZ:ADDED', { quiz });
-        }
-        catch (error) {
-            this.#errorChannel.emit('ERROR:QUIZ-ADDING', new QuizAddingError(error));
-        }
+        this.#commandChannel.on(
+            'QUIZ:REMOVE',
+            async ({ quizId }) => { this.remove(quizId); },
+        );
     }
 
     async loadQuizzes(): Promise<void> {
         await this.#db.getList().then(Either.match(
             err => this.#errorChannel.emit('ERROR:QUIZZES-LOADING', err),
             quizzes => this.#eventChannel.emit('QUIZZES:LOADED', { quizzes }),
+        ));
+    }
+
+    private async add(quizData: QuizData): Promise<void> {
+        await this.#db.add(quizData).then(Either.match(
+            error => this.#errorChannel.emit('ERROR:QUIZ-ADDING', error),
+            quiz => this.#eventChannel.emit('QUIZ:ADDED', { quiz }),
+        ));
+    }
+
+    private async remove(quizId: string): Promise<void> {
+        await this.#db.remove(quizId).then(Either.match(
+            error => this.#errorChannel.emit('ERROR:QUIZ-REMOVING', error),
+            () => this.#eventChannel.emit('QUIZ:REMOVED', { quizId }),
         ));
     }
 }

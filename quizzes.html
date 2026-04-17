@@ -67,7 +67,12 @@
 
 			<template id="quiz-card-template">
 				<div class="quiz-card">
-					<h3 class="quiz-card__title"></h3>
+					<div class="quiz-card__header">
+						<h3 class="quiz-card__title"></h3>
+						<button class="quiz-card__delete-button">
+							<img src="./assets/cross.svg" alt="Удалить квиз" width="20" height="20">
+						</button>
+					</div>
 					<p class="quiz-card__description"></p>
 					<div class="quiz-card__footer">
 						<div class="quiz-card__count text text_caption">0 вопросов</div>

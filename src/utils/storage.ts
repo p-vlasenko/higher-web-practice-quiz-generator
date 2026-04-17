@@ -7,7 +7,8 @@ import { makeQuizGettingErrorResult } from '@/errors/quiz-getting-error';
 import { makeQuizAddingErrorResult } from '@/errors/quiz-adding.error';
 import { makeQuizzesLoadingErrorResult } from '@/errors/quizzes-loading.error';
 import type { Quiz, QuizData } from '@/types/quiz';
-import type { AddQuizResult, GetQuizResult, LoadQuizzesResult, QuizStorage } from '@/types/base';
+import type { AddQuizResult, GetQuizResult, LoadQuizzesResult, QuizStorage, RemoveQuizResult } from '@/types/base';
+import { makeQuizRemovingErrorResult } from '@/errors/quiz-removing.error.js';
 
 const DB_NAME = 'quiz-generator';
 const SCHEMA_NAME = 'quizzes';
@@ -63,6 +64,16 @@ class QuizIndexedDbStorage implements QuizStorage {
         }
         catch (error) {
             return makeQuizGettingErrorResult(error);
+        }
+    }
+
+    async remove(id: string): Promise<RemoveQuizResult> {
+        try {
+            await this.#db.delete(SCHEMA_NAME, id);
+            return Either.right(true);
+        }
+        catch (error) {
+            return makeQuizRemovingErrorResult(error);
         }
     }
 

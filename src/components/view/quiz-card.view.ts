@@ -17,6 +17,7 @@ export class QuizCardBrowserView
     #description: HTMLElement;
     #count: HTMLElement;
     #action: HTMLElement;
+    #deleteButton: HTMLElement;
 
     constructor({ element, quizId }: Deps) {
         super();
@@ -27,8 +28,17 @@ export class QuizCardBrowserView
         this.#description = getFirstElementOrFail('.quiz-card__description', element);
         this.#count = getFirstElementOrFail('.quiz-card__count', element);
         this.#action = getFirstElementOrFail('.quiz-card__link', element);
+        this.#deleteButton = getFirstElementOrFail('.quiz-card__delete-button', element);
 
         this.#initListeners();
+    }
+
+    get quizId(): QuizId {
+        return this.#quizId;
+    }
+
+    remove(): void {
+        this.#element.remove();
     }
 
     renderTo(container: HTMLElement | DocumentFragment): void {
@@ -47,6 +57,11 @@ export class QuizCardBrowserView
         this.#action.addEventListener('click', event => {
             event.preventDefault();
             this.emit('start_quiz_click', { quizId: this.#quizId });
+        });
+
+        this.#deleteButton.addEventListener('click', event => {
+            event.stopPropagation();
+            this.emit('delete_quiz_click', { quizId: this.#quizId });
         });
     }
 

@@ -1,4 +1,4 @@
-import type { OptionId, Question, Quiz } from '@/types/quiz';
+import type { OptionId, Question, Quiz, QuizId } from '@/types/quiz';
 
 export type QuizAddingParams = {
     quizJson: string;
@@ -26,6 +26,7 @@ export type QuizAnswerResult = {
 export type EventsMap = {
     ['QUIZZES:LOADED']: QuizzesLoadedPayload;
     ['QUIZ:ADDED']: { quiz: Quiz };
+    ['QUIZ:REMOVED']: { quizId: QuizId };
     ['QUIZ-GAME:STARTED']: { quiz: Quiz };
     ['QUIZ-GAME:QUESTION:READY']: {
         question: Question;

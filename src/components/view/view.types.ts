@@ -9,15 +9,23 @@ import type { QuestionData } from '@/types/view';
 
 export type QuizCardViewEvents = {
     ['start_quiz_click']: { quizId: QuizId };
+    ['delete_quiz_click']: { quizId: QuizId };
 };
 
 export type QuizCardView = Observable<QuizCardViewEvents>
   & Renderable
-  & Renderer<Quiz>;
+  & Renderer<Quiz>
+  & {
+      quizId: QuizId;
+      remove(): void;
+  };
 
 export type QuizzesView = Observable<QuizCardViewEvents>
   & Renderer<QuizCardView[]>
-  & { clear(): void };
+  & {
+      clear(): void;
+      remove(quizId: QuizId): void;
+  };
 
 export type QuizGeneratorViewEvents = {
     ['submit']: QuizAddingParams;
