@@ -1,10 +1,12 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests',
   timeout: 30_000,
   expect: { timeout: 5_000 },
     use: {
+      screenshot: 'on',
+      trace: 'on-first-retry',
       baseURL: process.env.BASE_URL ?? 'http://127.0.0.1:3001',
       headless: true,
       viewport: { width: 1280, height: 720 },
