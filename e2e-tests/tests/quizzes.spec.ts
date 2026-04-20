@@ -4,7 +4,7 @@ import { url } from './utils';
 test.describe('Quizzes page', () => {
   test('create quiz then delete it', async ({ page }) => {
     await page.goto(url('/index.html'));
-    await page.waitForSelector('#quiz-json-input', { timeout: 30000 });
+    await page.waitForSelector('#quiz-json-input');
 
     const payload = {
       title: 'Delete Test Quiz',
@@ -38,7 +38,7 @@ test.describe('Quizzes page', () => {
 
   test('start quiz link navigates to quiz page', async ({ page }) => {
     await page.goto(url('/index.html'));
-    await page.waitForSelector('#quiz-json-input', { timeout: 30000 });
+    await page.waitForSelector('#quiz-json-input');
 
     const payload = {
       title: 'Start Link Quiz',

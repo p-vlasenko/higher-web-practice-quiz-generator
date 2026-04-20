@@ -5,7 +5,7 @@ test.describe('Responsive checks', () => {
   test('quizzes page fits mobile width', async ({ page }) => {
     // create a quiz then test responsive behavior
     await page.goto(url('/index.html'));
-    await page.waitForSelector('#quiz-json-input', { timeout: 30000 });
+    await page.waitForSelector('#quiz-json-input');
 
     const payload = {
       title: 'Responsive Quiz',

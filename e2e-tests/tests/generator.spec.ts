@@ -4,7 +4,7 @@ import { url } from './utils';
 test.describe('Generator page', () => {
   test('valid JSON generates quiz and navigates to quizzes', async ({ page }) => {
     await page.goto(url('/index.html'));
-    await page.waitForSelector('#quiz-json-input', { timeout: 30000 });
+    await page.waitForSelector('#quiz-json-input');
 
     const payload = {
       title: 'E2E Test Quiz',
@@ -37,7 +37,7 @@ test.describe('Generator page', () => {
 
   test('invalid JSON shows error modal', async ({ page }) => {
     await page.goto(url('/index.html'));
-    await page.waitForSelector('#quiz-json-input', { timeout: 30000 });
+    await page.waitForSelector('#quiz-json-input');
     await page.fill('#quiz-json-input', 'not a json');
     await page.click('.generator__button');
     await expect(page.locator('.modal_error')).toBeVisible();
